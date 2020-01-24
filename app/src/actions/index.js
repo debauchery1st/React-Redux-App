@@ -1,5 +1,11 @@
 import { updateGeometry, dispatchGeometry } from "./updateGeometry";
-import { updateWeather } from "./updateWeather";
+import { updateWeather, dispatchWeather } from "./updateWeather";
 import { updateZipcode } from "./updateZipcode";
 
-export { updateGeometry, dispatchGeometry, updateWeather, updateZipcode };
+export {
+  updateGeometry,
+  dispatchGeometry,
+  updateWeather,
+  dispatchWeather,
+  updateZipcode
+};

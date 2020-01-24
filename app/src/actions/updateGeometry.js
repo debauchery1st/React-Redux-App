@@ -10,9 +10,9 @@ export const updateGeometry = geometry => {
   };
 };
 
-export const dispatchGeometry = postcode => dispatch => {
+export const dispatchGeometry = location => dispatch => {
   return axios
-    .get(`https://debloggery.com/api/loc/${postcode}`)
+    .get(`https://debloggery.com/api/loc/${location}`)
     .then(result => {
       dispatch({
         type: UPDATE_GEOMETRY,

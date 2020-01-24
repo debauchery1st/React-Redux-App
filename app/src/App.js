@@ -1,15 +1,13 @@
 import React from "react";
 import Weather from "./components/Weather";
 import Geometry from "./components/Geometry";
-import "./App.css";
-
+import { AppContainer } from "./components/Styles";
 function App() {
   return (
-    <div className="App">
+    <AppContainer>
       <Weather />
-      <p>hello world</p>
       <Geometry />
-    </div>
+    </AppContainer>
   );
 }
 

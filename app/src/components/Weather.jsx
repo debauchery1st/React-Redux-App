@@ -3,9 +3,11 @@ import { connect } from "react-redux";
 import {
   updateZipcode,
   dispatchGeometry,
+  dispatchWeather,
   updateGeometry,
   updateWeather
 } from "../actions";
+import Forecast from "./Forecast";
 
 const mapStateToProps = state => {
   return { ...state.weatherReducer };
@@ -19,7 +21,9 @@ const Weather = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    props.dispatchGeometry(props.zipcode);
+    props
+      .dispatchGeometry(props.zipcode)
+      .then(props.dispatchWeather(props.geometry));
   };
 
   return (
@@ -32,6 +36,7 @@ const Weather = props => {
           onChange={handleChange}
         />
       </form>
+      <Forecast />
     </span>
   );
 };
@@ -40,5 +45,6 @@ export default connect(mapStateToProps, {
   updateZipcode,
   updateGeometry,
   dispatchGeometry,
+  dispatchWeather,
   updateWeather
 })(Weather);
